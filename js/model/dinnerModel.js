@@ -1,48 +1,62 @@
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
 //DinnerModel Object constructor
 var DinnerModel = function() {
  
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
+	var store = [numberOfGuests:0, menuItems:{}];
 
 
 	this.setNumberOfGuests = function(num) {
-		//TODO Lab 2
+		store[numberOfGuests] = num;
+		document.getElementById("numberOfGuests").innerHTML = store[numberOfGuests];
 	}
 
 	// should return 
 	this.getNumberOfGuests = function() {
-		//TODO Lab 2
+		return store[numberOfGuests];
 	}
 
 	//Returns the dish that is on the menu for selected type 
-	this.getSelectedDish = function(type) {
-		//TODO Lab 2
+	this.getSelectedDish = function(getType) {
+		return _.findWhere(dishes, {type: getType});
 	}
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
-		//TODO Lab 2
+		return store[menuItems];
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
 	this.getAllIngredients = function() {
-		//TODO Lab 2
+		var ingredientsList = {};
+		_.each(store[menuItems], function(item) {
+  			ingredientsList[ingredientsList.length] = store[menuItems][ingredients];
+		})
+		return ingredientsList;
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
-		//TODO Lab 2
+		var ingredientsList = getAllIngredients;
+		var totalPrice = 0;
+
+		_.each(ingredientsList, function(dish) {
+  			_.each(dish, totalPrice = totalPrice + dish[price]);
+		})
+
+		return totalPrice;
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
-	this.addDishToMenu = function(id) {
-		//TODO Lab 2 
+	this.addDishToMenu = function(addId) {
+		store[menuItems][store[menuItems].length] = _.findWhere(dishes, {id: addId};
 	}
 
 	//Removes dish from menu
-	this.removeDishFromMenu = function(id) {
-		//TODO Lab 2
+	this.removeDishFromMenu = function(removeId) {
+		store = _.without(store, _.findWhere(arr, {id: removeId}));
 	}
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
