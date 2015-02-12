@@ -1,61 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="commonstyle.css">
-    <title>Dinner planner</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-
-  </head>
-  <body>
-	<div class="row row-padded2">
-		<div class="col-md-1">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="commonstyle.css">
+		<title>Dinner planner</title>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class="row row-padded2">
+			<div class="col-md-1">
+			</div>
+			<div class="col-md-11">
+				<h1>HOMELETTE <small><i>From the best chefs in the world directly to your kitchen</i></small></h1>
+			</div>
 		</div>
-		<div class="col-md-11">
-			<h1>HOMELETTE <small><i>From the best chefs in the world directly to your kitchen</i></small></h1>
+		<div class="col-md-2 box-padded">
+			<h3>My Dinner</h3>
+			<div id="exampleView">
+				<div>
+					People:
+					<input id="numberOfGuests" type="number" value="0" min="0"/>
+				</div>
+			</div>
+			<div class="row row-padded3">
+				<div class="container">
+					<div class="col-md-1"> <b>Dish Name</b> </div>
+					<div class="col-md-1"> <b>Cost</b> </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="container">
+					<div class="col-md-1">
+						<p>Name</p>
+					</div>
+					<div class="col-md-1">
+						<p>12</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="container">
+					<div class="col-md-2">
+						<p class="text-right">12</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="container">
+					<button class="btn btn-default">Confirm Dinner</button>
+				</div>
+			</div>
 		</div>
-	</div>
+		<div class="col-md-10 background-box2">
+			<h3>SELECT DISH</h3>
+			<hr/>
+			  <div class="col-md-5">
+			    <div class="input-group">
+			      <input type="text" class="form-control" placeholder="Enter key words">
+			      <span class="input-group-btn">
+			        <button class="btn btn-default" type="button">search</button>
+			      </span>
+			    </div><!-- /input-group -->
+			  </div><!-- /.col-lg-6 -->
 
-	<div class="col-md-2 box-padded">
-	<h3>My Dinner</h3>
 
-	<div id="exampleView">
-		<div>
-			People:
-			<input id="numberOfGuests" type="number" value="0" min="0"/>
+		  	<div class="col-md-3">
+				<div class="dropdown">
+				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+				    Starter
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Main</a></li>
+				    <li role="presentation"><a role="menuitem" tabindex="2" href="#">Desert</a></li>
+				  </ul>
+				</div>
+			</div>
+		<br/>&nbsp;
+		<br/>&nbsp;
+
 		</div>
-	</div>
+
+		<div class="row col-md-10">
+		<div class="table-responsive">
+			<table class="table">
+				<tr>
+				    <td><img class="bordered" src="images/icecream.jpg" style="width:200px;height:200px"></td>
+				    <td><img class="bordered" src="images/icecream.jpg" style="width:200px;height:200px"></td>
+				    <td><img class="bordered" src="images/icecream.jpg" style="width:200px;height:200px"></td>
+				    <td><img class="bordered" src="images/icecream.jpg" style="width:200px;height:200px"></td>
+				    <td><img class="bordered" src="images/icecream.jpg" style="width:200px;height:200px"></td>
+				  </tr>
+				  <tr>
+				    <td><b>Ice cream</b></td>
+				    <td><b>Ice cream</b></td>
+				    <td><b>Ice cream</b></td>
+				    <td><b>Ice cream</b></td>
+				    <td><b>Ice cream</b></td>
+				  </tr>
+				  <tr>
+				    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</td>
+				    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</td>
+				    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</td>
+				    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</td>
+				    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</td>
+				  </tr>
+			</table>
+		</div> 
+		</div>
 
 
-	<div class="row row-padded3">
-	<div class="container">
-	<div class="col-md-1"> <b>Dish Name</b> </div>
-	<div class="col-md-1"> <b>Cost</b> </div>
-	</div>
-	</div>
-
-	<selectedDishes>
-		<dish class="container">
-			<div class="col-md-1">PlaceName</div>
-			<div class="col-md-1">12$</div>
-		</dish>
-	</selectedDishes>
-
-	</div>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-
-	<!-- The application JavaScript code -->
-	<script src="js/app.js"></script>
-	<script src="js/model/dinnerModel.js"></script>
-	<script src="js/view/exampleView.js"></script>
-	<script src="js/view/exampleViewController.js"></script>
-  </body>
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+		<!-- The application JavaScript code -->
+		<script src="js/app.js"></script>
+		<script src="js/model/dinnerModel.js"></script>
+		<script src="js/view/exampleView.js"></script>
+		<script src="js/view/exampleViewController.js"></script>
+	</body>
 </html>
