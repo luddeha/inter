@@ -85,36 +85,21 @@
 		</div>
 
 		<div class="row col-md-10">
-		<div class="table-responsive">
+		<div class="table-responsive" id="dishTable">
 			<table class="table">
-				<tr>
-				    <td><img class="bordered" src="images/icecream.jpg" style="width:200px;height:200px"></td>
-				    <td><img class="bordered" src="images/icecream.jpg" style="width:200px;height:200px"></td>
-				    <td><img class="bordered" src="images/icecream.jpg" style="width:200px;height:200px"></td>
-				    <td><img class="bordered" src="images/icecream.jpg" style="width:200px;height:200px"></td>
-				    <td><img class="bordered" src="images/icecream.jpg" style="width:200px;height:200px"></td>
+				<tr id="rowImg">
 				  </tr>
-				  <tr>
-				    <td><b>Ice cream</b></td>
-				    <td><b>Ice cream</b></td>
-				    <td><b>Ice cream</b></td>
-				    <td><b>Ice cream</b></td>
-				    <td><b>Ice cream</b></td>
+				  <tr id="rowName">
 				  </tr>
-				  <tr>
-				    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</td>
-				    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</td>
-				    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</td>
-				    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</td>
-				    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</td>
+				  <tr id="rowDescription">
 				  </tr>
 			</table>
 		</div> 
 		</div>
 
-
 		<!-- jQuery -->
 		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
 		<!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
 		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 		<!-- The application JavaScript code -->
@@ -122,5 +107,6 @@
 		<script src="js/model/dinnerModel.js"></script>
 		<script src="js/view/exampleView.js"></script>
 		<script src="js/view/exampleViewController.js"></script>
+		<script src="js/view/selectdish.js"></script>
 	</body>
 </html>

@@ -1,20 +1,18 @@
-<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
 //DinnerModel Object constructor
 var DinnerModel = function() {
  
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
-	var store = [numberOfGuests:0, menuItems:{}];
+	var store = {"numberOfGuests":4, "menuItems":{}};
 
 
 	this.setNumberOfGuests = function(num) {
-		store[numberOfGuests] = num;
-		document.getElementById("numberOfGuests").innerHTML = store[numberOfGuests];
+		store["numberOfGuests"] = num;
 	}
 
 	// should return 
 	this.getNumberOfGuests = function() {
-		return store[numberOfGuests];
+		return store["numberOfGuests"];
 	}
 
 	//Returns the dish that is on the menu for selected type 
@@ -24,14 +22,14 @@ var DinnerModel = function() {
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
-		return store[menuItems];
+		return store["menuItems"];
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
 	this.getAllIngredients = function() {
 		var ingredientsList = {};
-		_.each(store[menuItems], function(item) {
-  			ingredientsList[ingredientsList.length] = store[menuItems][ingredients];
+		_.each(store["menuItems"], function(item) {
+  			ingredientsList[ingredientsList.length] = store["menuItems"]["ingredients"];
 		})
 		return ingredientsList;
 	}
@@ -51,7 +49,7 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(addId) {
-		store[menuItems][store[menuItems].length] = _.findWhere(dishes, {id: addId};
+		store["menuItems"][store["menuItems"].length] = _.findWhere(dishes, {id: addId});
 	}
 
 	//Removes dish from menu
