@@ -16,6 +16,12 @@
 	background-color: rgba(207, 202, 222, 0.5);
 }
 
+body {
+  font-family: 'Tangerine', serif;
+  font-size: 48px;
+  text-shadow: 4px 4px 4px #aaa;
+}
+
 .vertical-line {
     border-left: solid #000;
 }
