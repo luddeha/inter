@@ -9,15 +9,10 @@ var Dish = function (container, model) {
 	
 	this.numberOfGuests.html(model.getNumberOfGuests);
 
-document.getElementById("numberOfGuests").setAttribute("value", String(model.getNumberOfGuests())); 
-
-console.log(String(model.getNumberOfGuests()))
-
 var items = model.getAllDishes("main dish").toArray();
 _.each(items, function(dish) {
-	$( "#rowImg" ).append( '<td><img class="bordered" src="images/'+dish["image"]+'""></td>' );
-	$( "#rowName" ).append( '<td><b>'+dish["name"]+'</b></td>' );
-	$( "#rowDescription" ).append( '<td>'+dish["description"]+'</td>' );	
+	_.each(dish["ingredients"], function(ingredient) {
+		$( "#ingredients" ).append( '<tr><td>'+ingredient["quantity"]+ingredient["unit"]+'</td><td>'+ingredient["name"]+'</td><td>SEK</td><td>'+dish["ingredients"]["price"]+'</td></tr>' );
+	})
 })
-
 }
