@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 
   </head>
-  <body class="background-image">
+  <body>
+  <div id="index" class="background-image">
 	<div class="row row-padded">
 		<div class="col-md-1">
 		</div>
@@ -30,22 +31,318 @@
 		<br/>
 		start quickly
 		<br/>
-		<button type="button" class="btn standard-button">
+		<button id="createDinner" type="button" class="btn standard-button">
 			Create new dinner
 		</button>
 		<br/>
 		&nbsp;
 	</div>
+	</div>
+
+	<div id="dinnerOverview">
+
+		<div class="row row-padded2">
+			<div class="col-md-1">
+			</div>
+			<div class="col-md-11">
+				<h1>HOMELETTE <small><i>From the best chefs in the world directly to your kitchen</i></small></h1>
+			</div>
+		</div>
+
+
+		<div class="row row-padded">
+			<div class="col-md-1">
+			</div>
+			<div class="col-md-8">
+				<h2>My dinner <d id="numberOfGuests">0</d> people</h2>
+			</div>
+			<div class="col-md-3">
+			    <button id="editDinner" type="button" class="btn btn-color"><a href="#"><span aria-hidden="true">&larr;</span>Go back and edit dinner</a></button>
+			</div>
+		</div>
+
+
+		<div class="row col-md-2"></div>
+
+		<div class="row col-md-8">
+		<div class="table-responsive">
+			<table class="table">
+				<tr id="rowImgr">
+				  </tr>
+				  <tr id="rowNameOver">
+				  </tr>
+				  <tr id="rowCostOver">
+				  </tr>
+			</table>
+		</div> 
+		</div>
+
+
+		<div class="row col-md-2 vertical-line">
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<p><b>Total:</b></p>
+		<p> 310.0 SEK </p>
+		</div>
+
+		<div class="row col-md-5"></div>
+		<div class="row col-md-1">
+			    <button id="printRecipe" type="button" class="btn btn-color"><a>Print Full Recipe</a></button>
+		</div>
+
+	</div>
+
+	<div id="dinnerPreparation">
+
+		<div class="row row-padded2">
+			<div class="col-md-1">
+			</div>
+			<div class="col-md-11">
+				<h1>HOMELETTE <small><i>From the best chefs in the world directly to your kitchen</i></small></h1>
+			</div>
+		</div>
+
+
+		<div class="row row-padded">
+			<div class="col-md-1">
+			</div>
+			<div class="col-md-8">
+				<h2>My dinner <d id="numberOfGuests">0</d> people</h2>
+			</div>
+			<div class="col-md-3">
+			    <button id="editDinner" type="button" class="btn btn-color"><a href="#"><span aria-hidden="true">&larr;</span>Go back and edit dinner</a></button>
+			</div>
+		</div>
+
+
+		<div class="row col-md-1"></div>
+
+		<div class="row col-md-11">
+		<div class="table-responsive">
+			<table class="table">
+				<tr>
+				    <td><img class="bordered" src="images/icecream.jpg" style="width:200px;height:200px"></td>
+				    <td><h3>Ice cream</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</p></td>
+				    <td><h3>Preparation</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.<br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</p></td>
+				  </tr>
+				  <tr>
+				    <td><img class="bordered" src="images/icecream.jpg" style="width:200px;height:200px"></td>
+				    <td><h3>Ice cream</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</p></td>
+				    <td><h3>Preparation</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</p></td>
+				  </tr>
+				  <tr>
+				    <td><img class="bordered" src="images/icecream.jpg" style="width:200px;height:200px"></td>
+				    <td><h3>Ice cream</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</p></td>
+				    <td><h3>Preparation</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</p></td>
+				  </tr>
+			</table>
+		</div> 
+		</div>
+
+	</div>
+
+	<div id="dish">
+		<div class="row row-padded2">
+			<div class="col-md-1">
+			</div>
+			<div class="col-md-11">
+				<h1>HOMELETTE <small><i>From the best chefs in the world directly to your kitchen</i></small></h1>
+			</div>
+		</div>
+		<div class="col-md-2 box-padded">
+			<h3>My Dinner</h3>
+			<div id="exampleView">
+				<div>
+					People:
+					<input id="numberOfGuests" type="number" value="0" min="0"/>
+				</div>
+			</div>
+			<div class="row row-padded3">
+				<div class="container">
+					<div class="col-md-1"> <b>Dish Name</b> </div>
+					<div class="col-md-1"> <b>Cost</b> </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="container">
+					<div class="col-md-1">
+						<p>Ice Cream</p>
+					</div>
+					<div class="col-md-1">
+						<p>12.00</p>
+					</div>
+				</div>
+				<hr/>
+			</div>
+			<div class="row">
+				<div class="container">
+					<div class="col-md-2">
+						<p class="text-right">SEK 12.00</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="container">
+					<button id="confirmDinner" type="button" class="btn btn-default">Confirm Dinner</button>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row col-md-5">
+		<div class="table-responsive">
+			<table class="table">
+				<tr id="rowImgDish">
+				  </tr>
+				  <tr id="rowNameDish">
+				  </tr>
+				  <tr id="rowDescriptionDish">
+				  </tr>
+			</table>
+		</div> 
+			<nav>
+			    <button id="selectDish" type="button" class="btn btn-color"><a href="#"><span aria-hidden="true">&larr;</span> back to Select Dish</a></button>
+			</nav>
+		</div>
+
+		<div class="row col-md-5 row-padded">
+		<p><b>INGEDIENTS FOR <d id="numberOfPeople">0</d> PEOPLE</b></p>      
+		<div class="table-responsive">
+			<table id="ingredients" class="table horizontal-line">
+				<tr>
+		            <th></th><th></th><th></th><th></th>
+			    </tr>
+			</table>
+		</div>
+			<nav class="col-md-2">
+			    <button id="confirmDish" type="button" class="btn btn-color"><a href="#">Confirm Dish</a></button>
+			</nav>
+			<div class="row col-md-9">
+				
+			</div>
+			<div class="row col-md-1">
+				<p>12.00</p>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div id="selectdish">
+
+		<div class="row row-padded2">
+			<div class="col-md-1">
+			</div>
+			<div class="col-md-11">
+				<h1>HOMELETTE <small><i>From the best chefs in the world directly to your kitchen</i></small></h1>
+			</div>
+		</div>
+		<div class="col-md-2 box-padded">
+			<h3>My Dinner</h3>
+			<div id="exampleView">
+				<div>
+					People:
+					<input id="numberOfGuests" type="number" value="0" min="0"/>
+				</div>
+			</div>
+			<div class="row row-padded3">
+				<div class="container">
+					<div class="col-md-1"> <b>Dish Name</b> </div>
+					<div class="col-md-1"> <b>Cost</b> </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="container">
+					<div class="col-md-1">
+						<p>Pending</p>
+					</div>
+					<div class="col-md-1">
+						<p>0.00</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="container">
+					<div class="col-md-2">
+						<p class="text-right">SEK 0.00</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="container">
+					<button id="confirmDinner" class="btn btn-default">Confirm Dinner</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-10 background-box2">
+			<h3>SELECT DISH</h3>
+			<hr/>
+			  <div class="col-md-5">
+			    <div class="input-group">
+			      <input type="text" class="form-control" placeholder="Enter key words">
+			      <span class="input-group-btn">
+			        <button id="btnSearch" class="btn btn-default" type="button">search</button>
+			      </span>
+			    </div><!-- /input-group -->
+			  </div><!-- /.col-lg-6 -->
+
+
+		  	<div class="col-md-3">
+				<div class="dropdown">
+				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownCourse" data-toggle="dropdown" aria-expanded="true">
+				    <d id="dropdownLable">Starter</d>
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				    <li role="presentation"><a id="starter" role="menuitem" tabindex="0" href="#">Starter</a></li>
+				    <li role="presentation"><a id="main" role="menuitem" tabindex="1" href="#">Main</a></li>
+				    <li role="presentation"><a id="desert" role="menuitem" tabindex="2" href="#">Desert</a></li>
+				  </ul>
+				</div>
+			</div>
+		<br/>&nbsp;
+		<br/>&nbsp;
+
+		</div>
+
+		<div class="row col-md-10">
+		<div class="table-responsive" id="dishTable">
+			<table class="table">
+				<tr id="rowImg">
+				  </tr>
+				  <tr id="rowName">
+				  </tr>
+				  <tr id="rowDescription">
+				  </tr>
+			</table>
+		</div> 
+		</div>
+
+	</div>
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-
-	<!-- The application JavaScript code -->
-	<script src="js/app.js"></script>
-	<script src="js/model/dinnerModel.js"></script>
-	<script src="js/view/exampleView.js"></script>
-	<script src="js/view/exampleViewController.js"></script>
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+		<!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+		<!-- The application JavaScript code -->
+		<script src="js/app.js"></script>
+		<script src="js/stateController.js"></script>
+		<script src="js/model/dinnerModel.js"></script>
+		<script src="js/view/dinnerPreparation.js"></script>
+		<script src="js/view/selectdish.js"></script>
+		<script src="js/view/dish.js"></script>
+		<script src="js/view/dinnerOverview.js"></script>
+		<script src="js/view/index.js"></script>
+		<script src="js/controller/dinnerPreparationController.js"></script>
+		<script src="js/controller/selectdishController.js"></script>
+		<script src="js/controller/dishController.js"></script>
+		<script src="js/controller/dinnerOverviewController.js"></script>
+		<script src="js/controller/indexController.js"></script>
   </body>
 </html>
