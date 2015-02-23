@@ -19,11 +19,13 @@ var DinnerOverview = function (container, model) {
 		$("#dinnerOverview").hide();
 	}
 
-	var items = model.getFullMenu();
-	_.each(items, function(dish) {
-		$( "#rowImgOver" ).append( '<td><img class="bordered" src="images/'+dish["image"]+'""></td>' );
-		$( "#rowNameOver" ).append( '<td><b>'+dish["name"]+'</b></td>' );
-		$( "#rowCostOver" ).append( '<td>'+dish["cost"]+'</td>' );
-	})
+	this.update = function() {
+		var items = model.getFullMenu();
+		_.each(items, function(dish) {
+			$( "#rowImgOver" ).append( '<td><img class="bordered" src="images/'+dish["image"]+'""></td>' );
+			$( "#rowNameOver" ).append( '<td><b>'+dish["name"]+'</b></td>' );
+			$( "#rowCostOver" ).append( '<td>'+dish["cost"]+'</td>' );
+		})
+	}
 
 }

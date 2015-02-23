@@ -23,13 +23,15 @@ var Dish = function (container, model) {
 		$("#dish").hide();
 	}
 
-	var dish = model.getDish(1);
-	_.each(dish["ingredients"], function(ingredient) {
-		$( "#ingredients" ).append( '<tr><td>'+ingredient["quantity"]+ingredient["unit"]+'</td><td>'+ingredient["name"]+'</td><td>SEK</td><td>'+ingredient["price"]+'</td></tr>' );
-	})
+	var update = function(){
+		var dish = model.getDish(1);
+		_.each(dish["ingredients"], function(ingredient) {
+			$( "#ingredients" ).append( '<tr><td>'+ingredient["quantity"]+ingredient["unit"]+'</td><td>'+ingredient["name"]+'</td><td>SEK</td><td>'+ingredient["price"]+'</td></tr>' );
+		})
 
-	var dish = model.getDish(1);
-		$( "#rowImgDish" ).append( '<td><img class="bordered" src="images/'+dish["image"]+'""></td>' );
-		$( "#rowNameDish" ).append( '<td><b>'+dish["name"]+'</b></td>' );
-		$( "#rowDescriptionDish" ).append( '<td>'+dish["description"]+'</td>' );
+		var dish = model.getDish(1);
+			$( "#rowImgDish" ).append( '<td><img class="bordered" src="images/'+dish["image"]+'""></td>' );
+			$( "#rowNameDish" ).append( '<td><b>'+dish["name"]+'</b></td>' );
+			$( "#rowDescriptionDish" ).append( '<td>'+dish["description"]+'</td>' );
+	}
 }

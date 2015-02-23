@@ -39,11 +39,13 @@ var SelectDish = function (container, model) {
 	}
 
 
-	var items = model.getAllDishes("main dish").toArray();
-	_.each(items, function(dish) {
-		$( "#rowImg" ).append( '<td><img id="'+dish["id"]+'" class="bordered" src="images/'+dish["image"]+'""></td>' );
-		$( "#rowName" ).append( '<td><b>'+dish["name"]+'</b></td>' );
-		$( "#rowDescription" ).append( '<td>'+dish["description"]+'</td>' );	
-	})
+	var update = function(){
+		var items = model.getAllDishes("main dish").toArray();
+		_.each(items, function(dish) {
+			$( "#rowImg" ).append( '<td><img id="'+dish["id"]+'" class="bordered" src="images/'+dish["image"]+'""></td>' );
+			$( "#rowName" ).append( '<td><b>'+dish["name"]+'</b></td>' );
+			$( "#rowDescription" ).append( '<td>'+dish["description"]+'</td>' );	
+		})
+	}
 
 }
