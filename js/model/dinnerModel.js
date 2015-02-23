@@ -10,9 +10,13 @@ var DinnerModel = function() {
 		observers.push(observer);
 	}
 	var notifyObservers = function(obj) {
-		_.each(observers, function(observer) {
-  			observer.update();
+		_.each(observers, function(item) {
+  			item.update();
 		})
+	}
+
+	this.updateViews = function() {
+		notifyObservers();
 	}
 
 	this.setNumberOfGuests = function(num) {

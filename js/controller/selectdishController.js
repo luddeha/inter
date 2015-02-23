@@ -8,17 +8,20 @@ var SelectDishController = function(view, model ) {
 
 	view.starter.click(function(){
 		view.dropdownStarter();
+		model.updateViews();
 		console.log("Starter");
 	});
 
 	view.main.click(function(){
 		view.dropdownMain();
+		model.updateViews();
 		console.log("Main");
 	});
 
 	view.desert.click(function(){
 		view.dropdownDesert();
-		console.log("Desert");
+		model.updateViews();
+		console.log("Dessert");
 	});
 
 	view.search.click(function(){

@@ -11,6 +11,10 @@ var Dish = function (container, model) {
 	this.confirmDinner = container.find("#confirmDinner");
 	this.selectDish = container.find("#selectDish");
 	this.confirmDish = container.find("#confirmDish");
+	var ingredientsRow = container.find("#ingredients");
+	var img = container.find("#rowImgDish");
+	var name = container.find("#rowNameDish");
+	var description = container.find("#rowDescriptionDish");
 
 	this.numberOfGuests.attr("value", model.getNumberOfGuests);
 	this.numberOfPeople.html(model.getNumberOfGuests);
@@ -23,15 +27,26 @@ var Dish = function (container, model) {
 		$("#dish").hide();
 	}
 
-	var update = function(){
+	this.update = function(){
 		var dish = model.getDish(1);
+
+		// Remove prev ingredients
+		ingredientsRow.empty();
+
+
 		_.each(dish["ingredients"], function(ingredient) {
-			$( "#ingredients" ).append( '<tr><td>'+ingredient["quantity"]+ingredient["unit"]+'</td><td>'+ingredient["name"]+'</td><td>SEK</td><td>'+ingredient["price"]+'</td></tr>' );
+			ingredientsRow.append( '<tr><td>'+ingredient["quantity"]+ingredient["unit"]+'</td><td>'+ingredient["name"]+'</td><td>SEK</td><td>'+ingredient["price"]+'</td></tr>' );
 		})
 
+		// Remove previous elements
+		img.empty();
+		name.empty();
+		description.empty();
+
+
 		var dish = model.getDish(1);
-			$( "#rowImgDish" ).append( '<td><img class="bordered" src="images/'+dish["image"]+'""></td>' );
-			$( "#rowNameDish" ).append( '<td><b>'+dish["name"]+'</b></td>' );
-			$( "#rowDescriptionDish" ).append( '<td>'+dish["description"]+'</td>' );
+			img.append( '<td><img class="bordered" src="images/'+dish["image"]+'""></td>' );
+			name.append( '<td><b>'+dish["name"]+'</b></td>' );
+			description.append( '<td>'+dish["description"]+'</td>' );
 	}
 }
