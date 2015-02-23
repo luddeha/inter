@@ -1,11 +1,11 @@
-dish.html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="commonstyle.css">
-		<title>Dish</title>
+		<title>Screen After</title>
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 	</head>
@@ -35,10 +35,13 @@ dish.html<!DOCTYPE html>
 				<div class="container">
 					<div class="col-md-1">
 						<p>Ice Cream</p>
+						<p>Pending</p>
 					</div>
 					<div class="col-md-1">
 						<p>12.00</p>
+						<p>0.00</p>
 					</div>
+
 				</div>
 				<hr/>
 			</div>
@@ -55,46 +58,47 @@ dish.html<!DOCTYPE html>
 				</div>
 			</div>
 		</div>
+		<div class="col-md-10 background-box2">
+			<h3>SELECT DISH</h3>
+			<hr/>
+			  <div class="col-md-5">
+			    <div class="input-group">
+			      <input type="text" class="form-control" placeholder="Enter key words">
+			      <span class="input-group-btn">
+			        <button class="btn btn-default" type="button">search</button>
+			      </span>
+			    </div><!-- /input-group -->
+			  </div><!-- /.col-lg-6 -->
+
+
+		  	<div class="col-md-3">
+				<div class="dropdown">
+				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+				    Starter
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Main</a></li>
+				    <li role="presentation"><a role="menuitem" tabindex="2" href="#">Desert</a></li>
+				  </ul>
+				</div>
+			</div>
+		<br/>&nbsp;
+		<br/>&nbsp;
 
 		</div>
 
-		<div class="row col-md-5">
+		<div class="row col-md-10">
 		<div class="table-responsive">
 			<table class="table">
-				<tr>
-				    <td><img class="bordered" src="images/icecream.jpg" style="width:400px;height:300px"></td>
+				<tr id="rowImgDish">
 				  </tr>
-				  <tr>
-				    <td><b>Ice cream</b></td>
+				  <tr id="rowNameDish">
 				  </tr>
-				  <tr>
-				    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</td>
+				  <tr id="rowDescriptionDish">
 				  </tr>
 			</table>
 		</div> 
-			<nav>
-			    <button class="btn btn-color"><a href="#"><span aria-hidden="true">&larr;</span> back to Select Dish</a></button>
-			</nav>
-		</div>
-
-		<div class="row col-md-5 row-padded">
-		<p><b>INGEDIENTS FOR 4 PEOPLE</b></p>      
-		<div class="table-responsive">
-			<table id="ingredients" class="table horizontal-line">
-				<tr>
-		            <th></th><th></th><th></th><th></th>
-			    </tr>
-			</table>
-		</div>
-			<nav class="col-md-2">
-			    <button class="btn btn-color"><a href="#">Confirm Dish</a></button>
-			</nav>
-			<div class="row col-md-9">
-				
-			</div>
-			<div class="row col-md-1">
-				<p>12.00</p>
-			</div>
 		</div>
 
 
@@ -110,5 +114,6 @@ dish.html<!DOCTYPE html>
 		<script src="js/view/exampleViewController.js"></script>
 		<script src="js/view/selectdish.js"></script>
 		<script src="js/view/dish.js"></script>
+		<script src="js/view/dinnerOverview.js"></script>
 	</body>
 </html>
