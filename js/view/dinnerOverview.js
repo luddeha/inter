@@ -11,6 +11,7 @@ var DinnerOverview = function (container, model) {
 	var img = container.find("#rowImgOver");
 	var name = container.find("#rowNameOver");
 	var cost = container.find("#rowCostOver");
+	var totalCost = container.find("#totalMenuCost");
 	
 	this.numberOfGuests.html(model.getNumberOfGuests);
 
@@ -29,11 +30,14 @@ var DinnerOverview = function (container, model) {
 		cost.empty();
 
 		var items = model.getFullMenu();
+		console.log(items);
 		_.each(items, function(dish) {
 			img.append( '<td><img class="bordered" src="images/'+dish["image"]+'""></td>' );
 			name.append( '<td><b>'+dish["name"]+'</b></td>' );
-			cost.append( '<td>'+dish["cost"]+'</td>' );
+			cost.append( '<td>'+model.getTotalDishPrice(dish["id"])+'</td>' );
 		})
+
+		totalCost.html(model.getTotalMenuPrice());
 	}
 
 }

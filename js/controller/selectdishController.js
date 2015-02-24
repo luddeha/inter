@@ -35,7 +35,7 @@ var SelectDishController = function(view, model ) {
 		$("img[clickable]").click(function(){
 			model.setCurrentItem(this.id);
 			window.stateController.showDish();
-			console.log("Dish"+this.id);
+			console.log("DishClicked"+this.id);
 		});
 	}
 }
