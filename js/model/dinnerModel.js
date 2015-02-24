@@ -65,14 +65,14 @@ var DinnerModel = function() {
 		_.each(ingredientsList, function(dish) {
   			_.each(dish, totalPrice = totalPrice + dish[price]);
 		})
-
+		console.log(totalPrice);
 		return totalPrice;
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(addId) {
-		store["menuItems"].push(_.findWhere(dishes, {id: addId}));
+		store["menuItems"].push(_.findWhere(dishes, {id: parseInt(addId)}));
 		notifyObservers();
 	}
 

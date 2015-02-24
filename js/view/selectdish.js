@@ -56,7 +56,7 @@ var SelectDish = function (container, model) {
 		img.empty();
 		name.empty();
 		description.empty();
-
+		
 		var items = model.getAllDishes(course, search).toArray();
 		_.each(items, function(dish) {
 			img.append( '<td><img id="'+dish["id"]+'" clickable="yes" class="bordered" src="images/'+dish["image"]+'"></td>' );
