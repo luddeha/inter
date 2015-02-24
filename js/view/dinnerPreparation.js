@@ -18,6 +18,11 @@ var DinnerPreparation = function (container, model) {
 	this.hide = function() {
 		$("#dinnerPreparation").hide();
 	}
+
+	this.update = function() {
+		
+	}
+
 	// Hide all pages
 	//hideAll();
 	//$("#dinnerPreparation").show();

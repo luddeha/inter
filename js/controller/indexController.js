@@ -4,6 +4,7 @@ var IndexController = function(view, model ) {
 
 	view.createDinner.click(function(){
 		window.stateController.showselectdish();
+		model.setNumberOfGuests(5);
 		console.log("createDinner");
 	});
 

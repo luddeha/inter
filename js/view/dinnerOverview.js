@@ -8,6 +8,9 @@ var DinnerOverview = function (container, model) {
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.editDinner = container.find("#editDinner");
 	this.printRecipe = container.find("#printRecipe");
+	var img = container.find("#rowImgOver");
+	var name = container.find("#rowNameOver");
+	var cost = container.find("#rowCostOver");
 	
 	this.numberOfGuests.html(model.getNumberOfGuests);
 
@@ -19,11 +22,18 @@ var DinnerOverview = function (container, model) {
 		$("#dinnerOverview").hide();
 	}
 
-	var items = model.getFullMenu();
-	_.each(items, function(dish) {
-		$( "#rowImgOver" ).append( '<td><img class="bordered" src="images/'+dish["image"]+'""></td>' );
-		$( "#rowNameOver" ).append( '<td><b>'+dish["name"]+'</b></td>' );
-		$( "#rowCostOver" ).append( '<td>'+dish["cost"]+'</td>' );
-	})
+	this.update = function() {
+		// Remove prev elements
+		img.empty();
+		name.empty();
+		cost.empty();
+
+		var items = model.getFullMenu();
+		_.each(items, function(dish) {
+			img.append( '<td><img class="bordered" src="images/'+dish["image"]+'""></td>' );
+			name.append( '<td><b>'+dish["name"]+'</b></td>' );
+			cost.append( '<td>'+dish["cost"]+'</td>' );
+		})
+	}
 
 }

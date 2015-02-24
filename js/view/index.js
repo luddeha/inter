@@ -14,6 +14,10 @@ var Index = function (container, model) {
 		$("#index").hide();	
 	}
 
+	this.update = function() {
+		
+	}
+
 	// Hide all pages
 	//hideAll();
 	

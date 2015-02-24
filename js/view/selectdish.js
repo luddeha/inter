@@ -13,21 +13,33 @@ var SelectDish = function (container, model) {
 	this.desert = container.find("#desert");
 	this.search = container.find("#btnSearch");
 	this.numberOfGuests = container.find("#numberOfGuests");
-	this.plusButton = container.find("#plusGuest");
-	this.minusButton = container.find("#minusGuest");
+	this.searchString = container.find("#searchString");
+	//this.clickImg = container.find("img");
+	var img = container.find("#rowImg");
+	var name = container.find("#rowName");
+	var description = container.find("#rowDescription");
+	var course = "starter";
+	var search = "";
 	
 	this.numberOfGuests.attr("value", model.getNumberOfGuests);
 
+	this.setSearch = function(string) {
+		search = string;
+	}
+
 	this.dropdownStarter = function (){
 		this.lable.html("Starter");
+		course = "starter";
 	}
 
 	this.dropdownMain = function (){
 		this.lable.html("Main");
+		course = "main dish";
 	}
 
 	this.dropdownDesert = function (){
-		this.lable.html("Desert");
+		this.lable.html("Dessert");
+		course = "dessert";
 	}
 
 	this.show = function() {
@@ -39,11 +51,18 @@ var SelectDish = function (container, model) {
 	}
 
 
-	var items = model.getAllDishes("main dish").toArray();
-	_.each(items, function(dish) {
-		$( "#rowImg" ).append( '<td><img id="'+dish["id"]+'" class="bordered" src="images/'+dish["image"]+'""></td>' );
-		$( "#rowName" ).append( '<td><b>'+dish["name"]+'</b></td>' );
-		$( "#rowDescription" ).append( '<td>'+dish["description"]+'</td>' );	
-	})
+	this.update = function(){
+		// Remove previous elements
+		img.empty();
+		name.empty();
+		description.empty();
+
+		var items = model.getAllDishes(course, search).toArray();
+		_.each(items, function(dish) {
+			img.append( '<td><img id="'+dish["id"]+'" clickable="yes" class="bordered" src="images/'+dish["image"]+'"></td>' );
+			name.append( '<td><b>'+dish["name"]+'</b></td>' );
+			description.append( '<td>'+dish["description"]+'</td>' );	
+		})
+	}
 
 }

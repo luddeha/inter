@@ -24,7 +24,7 @@ var StateController = function() {
 		views["dinnerPreparation"].show();
 	}
 
-	this.showDish = function() {
+	this.showDish = function(id) {
 		hideAll();
 		views["dish"].show();
 	}

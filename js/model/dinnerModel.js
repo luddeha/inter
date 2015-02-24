@@ -3,13 +3,34 @@ var DinnerModel = function() {
  
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
-	var store = {"numberOfGuests":8, "menuItems":[]};
+	var store = {"numberOfGuests":8, "menuItems":[], "currentItem":1};
+	var observers = [];
 
-	this.addObserver = function(observer) {}
-	var notifyObservers = function(obj) {}
+	this.addObserver = function(observer) {
+		observers.push(observer);
+	}
+	var notifyObservers = function(obj) {
+		_.each(observers, function(item) {
+  			item.update();
+		})
+	}
+
+	this.setCurrentItem = function(id){
+		store["currentItem"] = id;
+		notifyObservers();
+	}
+
+	this.getCurrentItem = function(){
+		return store["currentItem"];
+	}
+
+	this.updateViews = function() {
+		notifyObservers();
+	}
 
 	this.setNumberOfGuests = function(num) {
 		store["numberOfGuests"] = num;
+		notifyObservers();
 	}
 
 	// should return 
@@ -38,7 +59,7 @@ var DinnerModel = function() {
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
-		var ingredientsList = getAllIngredients;
+		var ingredientsList = this.getAllIngredients;
 		var totalPrice = 0;
 
 		_.each(ingredientsList, function(dish) {
@@ -51,12 +72,14 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(addId) {
-		store["menuItems"][store["menuItems"].length] = _.findWhere(dishes, {id: addId});
+		store["menuItems"].push(_.findWhere(dishes, {id: addId}));
+		notifyObservers();
 	}
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(removeId) {
 		store = _.without(store, _.findWhere(arr, {id: removeId}));
+		notifyObservers();
 	}
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
