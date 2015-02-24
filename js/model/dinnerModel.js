@@ -95,7 +95,7 @@ var DinnerModel = function() {
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(removeId) {
-		store = _.without(store, _.findWhere(arr, {id: removeId}));
+		store["menuItems"] = _.without(store["menuItems"], _.find(store["menuItems"], {id: parseInt(removeId)}));
 		notifyObservers();
 	}
 

@@ -12,6 +12,7 @@ var StateController = function() {
 		views["dinnerPreparation"].hide();
 		views["dish"].hide();
 		views["selectdish"].hide();
+		views["sidebar"].hide();
 	}
 
 	this.showDinnerOverview = function() {

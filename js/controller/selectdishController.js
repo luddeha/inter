@@ -2,6 +2,11 @@ var SelectDishController = function(view, model ) {
 	
 	model.addObserver(this)
 
+	view.numberOfPeople.change(function(){
+		model.setNumberOfGuests(view.numberOfPeople.val());
+		console.log(view.numberOfPeople.val());
+	});
+
 	view.confirmDinner.click(function(){
 		window.stateController.showDinnerOverview();
 		console.log("confirmDinner");
@@ -36,6 +41,13 @@ var SelectDishController = function(view, model ) {
 			model.setCurrentItem(this.id);
 			window.stateController.showDish();
 			console.log("DishClicked"+this.id);
+		});
+
+
+		$("tr[clickable]").click(function(){
+			model.setCurrentItem(1);
+			model.removeDishFromMenu(this.id);
+			console.log("DishClickedSidebar"+this.id);
 		});
 	}
 }

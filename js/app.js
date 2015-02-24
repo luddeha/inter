@@ -13,6 +13,8 @@ $(function() {
 	var selectDishController = new SelectDishController(selectDish,model);
 	var dish = new Dish($("#dish"), model);
 	var dishController = new DishController(dish,model);
+	var sidebar = new Sidebar($("#sidebar"), model);
+	var sidebarController = new SidebarController(sidebar,model);
 	var index = new Index($("#index"), model);
 	var indexController = new IndexController(index,model);
 

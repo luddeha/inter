@@ -68,11 +68,11 @@
 		<div class="table-responsive">
 			<table class="table">
 				<tr id="rowImgOver">
-				  </tr>
-				  <tr id="rowNameOver">
-				  </tr>
-				  <tr id="rowCostOver">
-				  </tr>
+				</tr>
+				<tr id="rowNameOver">
+				</tr>
+				<tr id="rowCostOver">
+				</tr>
 			</table>
 		</div> 
 		</div>
@@ -124,26 +124,50 @@
 
 		<div class="row col-md-11">
 		<div class="table-responsive">
-			<table class="table">
-				<tr>
-				    <td><img class="bordered" src="images/icecream.jpg"></td>
-				    <td><h3>Ice cream</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</p></td>
-				    <td><h3>Preparation</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.<br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</p></td>
-				  </tr>
-				  <tr>
-				    <td><img class="bordered" src="images/icecream.jpg"></td>
-				    <td><h3>Ice cream</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</p></td>
-				    <td><h3>Preparation</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</p></td>
-				  </tr>
-				  <tr>
-				    <td><img class="bordered" src="images/icecream.jpg"></td>
-				    <td><h3>Ice cream</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</p></td>
-				    <td><h3>Preparation</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus nisi turpis, vitae convallis neque feugiat nec. Ut semper lectus lectus, sed porta lectus faucibus sed.</p></td>
-				  </tr>
+			<table id="prepTable" class="table">
 			</table>
 		</div> 
 		</div>
 
+	</div>
+
+	<div id="sidebar" class="col-md-2 box-padded">
+		<h3>My Dinner</h3>
+		<div id="exampleView">
+			<div>
+				People:
+				<input id="numberOfGuests" type="number" value="0" min="0"/>
+			</div>
+		</div>
+		<div class="row row-padded3">
+			<div class="container">
+				<div class="col-md-1"> <b>Dish Name</b> </div>
+				<div class="col-md-1"> <b>Cost</b> </div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="container">
+				<div class="col-md-1">
+					<p>Ice Cream</p>
+				</div>
+				<div class="col-md-1">
+					<p>12.00</p>
+				</div>
+			</div>
+			<hr/>
+		</div>
+		<div class="row">
+			<div class="container">
+				<div class="col-md-2">
+					<p class="text-right">SEK <d id="totalPrice">0</d></p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="container">
+				<button id="confirmDinner" type="button" class="btn btn-default">Confirm Dinner</button>
+			</div>
+		</div>
 	</div>
 
 	<div id="dish">
@@ -154,6 +178,7 @@
 				<h1>HOMELETTE <small><i>From the best chefs in the world directly to your kitchen</i></small></h1>
 			</div>
 		</div>
+
 		<div class="col-md-2 box-padded">
 			<h3>My Dinner</h3>
 			<div id="exampleView">
@@ -170,19 +195,15 @@
 			</div>
 			<div class="row">
 				<div class="container">
-					<div class="col-md-1">
-						<p>Ice Cream</p>
-					</div>
-					<div class="col-md-1">
-						<p>12.00</p>
-					</div>
+					<table id="sidebarMenu" style="width:15%">
+					</table>
 				</div>
 				<hr/>
 			</div>
 			<div class="row">
 				<div class="container">
 					<div class="col-md-2">
-						<p class="text-right">SEK 12.00</p>
+						<p class="text-right">SEK <d id="totalPrice">0</d></p>
 					</div>
 				</div>
 			</div>
@@ -192,7 +213,6 @@
 				</div>
 			</div>
 		</div>
-
 
 		<div class="row col-md-5">
 		<div class="table-responsive">
@@ -242,6 +262,8 @@
 				<h1>HOMELETTE <small><i>From the best chefs in the world directly to your kitchen</i></small></h1>
 			</div>
 		</div>
+		
+
 		<div class="col-md-2 box-padded">
 			<h3>My Dinner</h3>
 			<div id="exampleView">
@@ -258,27 +280,25 @@
 			</div>
 			<div class="row">
 				<div class="container">
-					<div class="col-md-1">
-						<p>Pending</p>
-					</div>
-					<div class="col-md-1">
-						<p>0.00</p>
-					</div>
+					<table id="sidebarMenu" style="width:15%">
+					</table>
 				</div>
+				<hr/>
 			</div>
 			<div class="row">
 				<div class="container">
 					<div class="col-md-2">
-						<p class="text-right">SEK 0.00</p>
+						<p class="text-right">SEK <d id="totalPrice">0</d></p>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="container">
-					<button id="confirmDinner" class="btn btn-default">Confirm Dinner</button>
+					<button id="confirmDinner" type="button" class="btn btn-default">Confirm Dinner</button>
 				</div>
 			</div>
 		</div>
+
 		<div class="col-md-10 background-box2">
 			<h3>SELECT DISH</h3>
 			<hr/>
@@ -337,11 +357,13 @@
 		<script src="js/view/dinnerPreparation.js"></script>
 		<script src="js/view/selectdish.js"></script>
 		<script src="js/view/dish.js"></script>
+		<script src="js/view/sidebar.js"></script>
 		<script src="js/view/dinnerOverview.js"></script>
 		<script src="js/view/index.js"></script>
 		<script src="js/controller/dinnerPreparationController.js"></script>
 		<script src="js/controller/selectdishController.js"></script>
 		<script src="js/controller/dishController.js"></script>
+		<script src="js/controller/sidebarController.js"></script>
 		<script src="js/controller/dinnerOverviewController.js"></script>
 		<script src="js/controller/indexController.js"></script>
   </body>

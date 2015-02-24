@@ -14,10 +14,13 @@ var SelectDish = function (container, model) {
 	this.search = container.find("#btnSearch");
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.searchString = container.find("#searchString");
+	this.numberOfPeople = container.find("#numberOfGuests");
 	//this.clickImg = container.find("img");
 	var img = container.find("#rowImg");
 	var name = container.find("#rowName");
 	var description = container.find("#rowDescription");
+	var totalMenuPrice = container.find("#totalPrice");
+	var sidebarMenu = container.find("#sidebarMenu");
 	var course = "starter";
 	var search = "";
 	
@@ -56,12 +59,21 @@ var SelectDish = function (container, model) {
 		img.empty();
 		name.empty();
 		description.empty();
+		sidebarMenu.empty();
+
+		this.numberOfPeople.val(model.getNumberOfGuests());
+		totalMenuPrice.html(model.getTotalMenuPrice());
 
 		var items = model.getAllDishes(course, search).toArray();
 		_.each(items, function(dish) {
 			img.append( '<td><img id="'+dish["id"]+'" clickable="yes" class="bordered" src="images/'+dish["image"]+'"></td>' );
 			name.append( '<td><b>'+dish["name"]+'</b></td>' );
 			description.append( '<td>'+dish["description"]+'</td>' );	
+		})
+
+		var items = model.getFullMenu();
+		_.each(items, function(dish) {
+			sidebarMenu.append( '<tr id="'+dish["id"]+'" clickable="yes"><td>'+dish["name"]+'</td><td>'+model.getTotalDishPrice(dish["id"])+'</td></tr>');
 		})
 	}
 

@@ -12,8 +12,6 @@ var DinnerOverview = function (container, model) {
 	var name = container.find("#rowNameOver");
 	var cost = container.find("#rowCostOver");
 	var totalCost = container.find("#totalMenuCost");
-	
-	this.numberOfGuests.html(model.getNumberOfGuests);
 
 	this.show = function() {
 		$("#dinnerOverview").show();
@@ -28,6 +26,8 @@ var DinnerOverview = function (container, model) {
 		img.empty();
 		name.empty();
 		cost.empty();
+
+		this.numberOfGuests.html(model.getNumberOfGuests());
 
 		var items = model.getFullMenu();
 		console.log(items);
