@@ -11,9 +11,9 @@ var DishController = function(view, model ) {
 	});
 
 	view.confirmDish.click(function(){
+		console.log("confirmDish"+model.getCurrentItem());
+		model.addDishToMenu(model.getCurrentItem());
 		window.stateController.showselectdish();
-		console.log("confirmDish");
 	});
-
 
 }

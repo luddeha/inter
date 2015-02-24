@@ -15,6 +15,8 @@ var Dish = function (container, model) {
 	var img = container.find("#rowImgDish");
 	var name = container.find("#rowNameDish");
 	var description = container.find("#rowDescriptionDish");
+	var totalPrice = container.find("#totalCost");
+	var dishId = 1;
 
 	this.numberOfGuests.attr("value", model.getNumberOfGuests);
 	this.numberOfPeople.html(model.getNumberOfGuests);
@@ -27,26 +29,33 @@ var Dish = function (container, model) {
 		$("#dish").hide();
 	}
 
+	this.setDishId = function(id) {
+		console.log(id);
+	}
+
 	this.update = function(){
-		var dish = model.getDish(1);
+		var dish = model.getDish(model.getCurrentItem());
+		var totalCost = 0;
 
 		// Remove prev ingredients
 		ingredientsRow.empty();
 
 
 		_.each(dish["ingredients"], function(ingredient) {
-			ingredientsRow.append( '<tr><td>'+ingredient["quantity"]+ingredient["unit"]+'</td><td>'+ingredient["name"]+'</td><td>SEK</td><td>'+ingredient["price"]+'</td></tr>' );
+			ingredientsRow.append( '<tr><td>'+ingredient["quantity"]*model.getNumberOfGuests()+ingredient["unit"]+'</td><td>'+ingredient["name"]+'</td><td>SEK</td><td>'+ingredient["price"]*model.getNumberOfGuests()+'</td></tr>' );
+			totalCost = totalCost + ingredient["price"];
 		})
+
+		// Sets the total price in the view
+		totalPrice.html(totalCost*model.getNumberOfGuests());
 
 		// Remove previous elements
 		img.empty();
 		name.empty();
 		description.empty();
 
-
-		var dish = model.getDish(1);
-			img.append( '<td><img class="bordered" src="images/'+dish["image"]+'""></td>' );
-			name.append( '<td><b>'+dish["name"]+'</b></td>' );
-			description.append( '<td>'+dish["description"]+'</td>' );
+		img.append( '<td><img class="bordered" src="images/'+dish["image"]+'""></td>' );
+		name.append( '<td><b>'+dish["name"]+'</b></td>' );
+		description.append( '<td>'+dish["description"]+'</td>' );
 	}
 }

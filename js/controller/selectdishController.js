@@ -1,6 +1,7 @@
 var SelectDishController = function(view, model ) {
-
 	
+	model.addObserver(this)
+
 	view.confirmDinner.click(function(){
 		window.stateController.showDinnerOverview();
 		console.log("confirmDinner");
@@ -25,6 +26,16 @@ var SelectDishController = function(view, model ) {
 	});
 
 	view.search.click(function(){
-		console.log("Search");
+		view.setSearch(view.searchString.val());
+		model.updateViews();
+		console.log("Search: "+view.searchString.val());
 	});
+
+	this.update = function(){
+		$("img[clickable]").click(function(){
+			model.setCurrentItem(this.id);
+			window.stateController.showDish();
+			console.log("Dish"+this.id);
+		});
+	}
 }

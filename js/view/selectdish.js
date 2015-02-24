@@ -13,12 +13,19 @@ var SelectDish = function (container, model) {
 	this.desert = container.find("#desert");
 	this.search = container.find("#btnSearch");
 	this.numberOfGuests = container.find("#numberOfGuests");
+	this.searchString = container.find("#searchString");
+	//this.clickImg = container.find("img");
 	var img = container.find("#rowImg");
 	var name = container.find("#rowName");
 	var description = container.find("#rowDescription");
 	var course = "starter";
+	var search = "";
 	
 	this.numberOfGuests.attr("value", model.getNumberOfGuests);
+
+	this.setSearch = function(string) {
+		search = string;
+	}
 
 	this.dropdownStarter = function (){
 		this.lable.html("Starter");
@@ -49,10 +56,10 @@ var SelectDish = function (container, model) {
 		img.empty();
 		name.empty();
 		description.empty();
-		
-		var items = model.getAllDishes(course).toArray();
+
+		var items = model.getAllDishes(course, search).toArray();
 		_.each(items, function(dish) {
-			img.append( '<td><img id="'+dish["id"]+'" class="bordered" src="images/'+dish["image"]+'""></td>' );
+			img.append( '<td><img id="'+dish["id"]+'" clickable="yes" class="bordered" src="images/'+dish["image"]+'"></td>' );
 			name.append( '<td><b>'+dish["name"]+'</b></td>' );
 			description.append( '<td>'+dish["description"]+'</td>' );	
 		})
