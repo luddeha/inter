@@ -50,28 +50,45 @@ var DinnerModel = function() {
 
 	//Returns all ingredients for all the dishes on the menu.
 	this.getAllIngredients = function() {
-		var ingredientsList = {};
-		_.each(store["menuItems"], function(item) {
-  			ingredientsList[ingredientsList.length] = store["menuItems"]["ingredients"];
+		var ingredientsList = [];
+		_.each(store["menuItems"], function(items) {
+			_.each(items["ingredients"], function(item) {
+  				ingredientsList.push(item);
+			})
 		})
 		return ingredientsList;
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
-		var ingredientsList = this.getAllIngredients;
+		var ingredientsList = this.getAllIngredients();
+		console.log(ingredientsList);
 		var totalPrice = 0;
 
-		_.each(ingredientsList, function(dish) {
-  			_.each(dish, totalPrice = totalPrice + dish[price]);
+		_.each(ingredientsList, function(ingredient) {
+  			totalPrice = totalPrice + ingredient["price"];
 		})
-		console.log(totalPrice);
-		return totalPrice;
+
+		return totalPrice * store["numberOfGuests"];
+	}
+
+	this.getTotalDishPrice = function(id) {
+		var dish = this.getDish(id);
+		var totalCost = 0;
+
+
+		_.each(dish["ingredients"], function(ingredient) {
+			totalCost = totalCost + ingredient["price"];
+		})
+
+		// Sets the total price in the view
+		return totalCost*this.getNumberOfGuests();
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(addId) {
+		console.log(_.findWhere(dishes, {id: parseInt(addId)}));
 		store["menuItems"].push(_.findWhere(dishes, {id: parseInt(addId)}));
 		notifyObservers();
 	}

@@ -35,7 +35,6 @@ var Dish = function (container, model) {
 
 	this.update = function(){
 		var dish = model.getDish(model.getCurrentItem());
-		var totalCost = 0;
 
 		// Remove prev ingredients
 		ingredientsRow.empty();
@@ -43,11 +42,10 @@ var Dish = function (container, model) {
 
 		_.each(dish["ingredients"], function(ingredient) {
 			ingredientsRow.append( '<tr><td>'+ingredient["quantity"]*model.getNumberOfGuests()+ingredient["unit"]+'</td><td>'+ingredient["name"]+'</td><td>SEK</td><td>'+ingredient["price"]*model.getNumberOfGuests()+'</td></tr>' );
-			totalCost = totalCost + ingredient["price"];
 		})
 
 		// Sets the total price in the view
-		totalPrice.html(totalCost*model.getNumberOfGuests());
+		totalPrice.html(model.getTotalDishPrice(model.getCurrentItem()));
 
 		// Remove previous elements
 		img.empty();
